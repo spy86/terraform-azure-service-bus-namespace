@@ -53,31 +53,3 @@ No modules.
 | <a name="output_secondary_send_and_listen_shared_access_key"></a> [secondary\_send\_and\_listen\_shared\_access\_key](#output\_secondary\_send\_and\_listen\_shared\_access\_key) | The Secondary Key for the ServiceBus Namespace authorization Rule. |
 | <a name="output_sku"></a> [sku](#output\_sku) | Defines which tier to use. |
 <!-- END_TF_DOCS -->
-
-## How to use
-
-```
-module "service-bus-namespace" {
-  source  = "spy86/service-bus-namespace/azure"
-  version = "1.0.1"
-  resource_group_name = "weu-test-rg"
-  servicebus_namespace_name = "c803dd50"
-  environment = "dev"
-  region = "weu"
-  resource_group_location= "West Europe"
-  servicebus_namespace_authorization_rule_listen = "true"
-  servicebus_namespace_authorization_rule_manage = "false"
-  servicebus_namespace_authorization_rule_send = "true"
-  servicebus_namespace_capacity = "0"
-  servicebus_namespace_sku = "Basic"
-  servicebus_redundency = "false"
-
-  default_tags = {
-      Administrator = "Someone"
-      Department = "IT"
-      CostCentre = "ABC123"
-      ContactPerson = "Someone@example.com"
-      ManagedByTerraform = "True"
-}
-}
-```
